@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pollen Predictor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="/">← Back</a>
+            <h2>🌻 Predict Pollen Plant</h2>
+        </header>
+        <main>
+            <form method="post" action="/pollen">
+                <div class="form-group">
+                    <label for="CS">Color Score (CS) <span class="input-hint">(1.0–10.0)</span></label>
+                    <input type="number" step="any" name="CS" id="CS" required>
+                </div>
+                <div class="form-group">
+                    <label for="Density">Density <span class="input-hint">(1.21–1.86 g/cm³ at 25°C)</span></label>
+                    <input type="number" step="any" name="Density" id="Density" required>
+                </div>
+                <div class="form-group">
+                    <label for="WC">Water Content (WC) <span class="input-hint">(12.0%–25.0%)</span></label>
+                    <input type="number" step="any" name="WC" id="WC" required>
+                </div>
+                <div class="form-group">
+                    <label for="pH">pH <span class="input-hint">(2.50–7.50)</span></label>
+                    <input type="number" step="any" name="pH" id="pH" required>
+                </div>
+                <div class="form-group">
+                    <label for="EC">Electrical Conductivity (EC) <span class="input-hint">(mS/cm)</span></label>
+                    <input type="number" step="any" name="EC" id="EC" required>
+                </div>
+                <div class="form-group">
+                    <label for="F">Fructose Level (F) <span class="input-hint">(20–50)</span></label>
+                    <input type="number" step="any" name="F" id="F" required>
+                </div>
+                <div class="form-group">
+                    <label for="G">Glucose Level (G) <span class="input-hint">(20–45)</span></label>
+                    <input type="number" step="any" name="G" id="G" required>
+                </div>
+                <div class="form-group">
+                    <label for="Viscosity">Viscosity <span class="input-hint">(1500–10000 cP, optimal: 2500–9500)</span></label>
+                    <input type="number" step="any" name="Viscosity" id="Viscosity" required>
+                </div>
+                <div class="form-group">
+                    <label for="Purity">Purity <span class="input-hint">(0.01–1.00)</span></label>
+                    <input type="number" step="any" name="Purity" id="Purity" required>
+                </div>
+                <div class="form-group">
+                    <label for="Price">Price <span class="input-hint">(calculated)</span></label>
+                    <input type="number" step="any" name="Price" id="Price" required>
+                </div>
+                <button type="submit" class="main-btn">Predict Pollen Plant</button>
+            </form>
+        </main>
+    </div>
+    {% if pollen_result %}
+    <div id="resultModal" class="modal">
+        <div class="modal-content large-modal">
+            <button class="close" onclick="closeModal()">&times;</button>
+            <p class="answer-text">🌻 <span style="font-size:2rem;">Predicted Pollen Plant:</span><br>{{ pollen_result }}</p>
+        </div>
+    </div>
+    <script>
+    function closeModal() {
+        document.getElementById('resultModal').classList.remove('active');
+    }
+    window.onload = function() {
+        var modal = document.getElementById('resultModal');
+        if (modal) {
+            modal.classList.add('active');
+        }
+    };
+    </script>
+    {% endif %}
+</body>
+</html> 
