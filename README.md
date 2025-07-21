@@ -1,7 +1,9 @@
 # 🍯 Honey Purity & Price Prediction System
 
 ---
-Try this project on : [Honey-Pure](https://honey-purity.onrender.com)
+Try this project by clicking on Link: [Honey-Pure](https://honey-purity.onrender.com)
+---
+Public Dataset used : [Honey Pricing By Statistics Department of Bangalore University](https://www.kaggle.com/datasets/ravikumarbangalore/honey-price-analysis)
 ## 📖 Story Behind the Project
 
 On a family trip to the serene hill station of **Saputara in Gujarat**, the roads were lined with small shops shouting **100% Organic Honey!** and **Pure Forest Honey**.  
