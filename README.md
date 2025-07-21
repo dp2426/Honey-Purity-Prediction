@@ -1,7 +1,7 @@
 # 🍯 Honey Purity & Price Prediction System
 
 ---
-
+Try this project on : [Honey-Pure](https://honey-purity.onrender.com)
 ## 📖 Story Behind the Project
 
 On a family trip to the serene hill station of **Saputara in Gujarat**, the roads were lined with small shops shouting **100% Organic Honey!** and **Pure Forest Honey**.  
@@ -71,21 +71,21 @@ All of this is handled with user-friendly web forms and trained regression/class
 ### 🔹 Honey Purity Predictor (Regression)
 - **Algorithm**: `XGBRegressor`
 - **Tuned via**: `RandomizedSearchCV + 5-Fold Cross-Validation`
-- **RMSE**: `~1.32`
-- **R² Score**: `0.94`
+- **RMSE**: `0.0`
+- **R² Score**: `0.98`
 - ✅ Highly accurate — can be trusted for purity prediction within 2% margin.
 
 ### 🔹 Price Prediction Model (Regression)
 - **Algorithm**: `XGBRegressor`
 - **Trained with Same Inputs + Optional "Purity %"**
 - **Used for**: Estimating fair price per unit weight
-- **R² Score**: `0.91`
+- **RMSE Score**: `0.91`
 
 ### 🔹 Deal Classification (Great Deal / Fair / Overpriced)
 - **Post-processing Step** using price delta:
-    - Great Deal → Predicted Price > Actual Price by > 10%
-    - Fair → within ±10%
-    - Overpriced → Actual Price > Predicted by > 10%
+    - Great Deal → Predicted Price > Actual Price by > 5%
+    - Fair → within ±5%
+    - Overpriced → Actual Price > Predicted by > 5%
 
 ### 🔹 Pollen Source Predictor (Classification)
 - **Algorithm**: `XGBClassifier`
@@ -104,30 +104,11 @@ All of this is handled with user-friendly web forms and trained regression/class
 
 ---
 
-## 🚀 How to Run (Local Development)
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/your-github/honey-purity-prediction.git
-   cd honey-purity-prediction
-   ```
-2. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. **Place your trained model `.pkl` files** in the project root.
-4. **Run the Flask app:**
-   ```bash
-   python app.py
-   ```
-5. **Open your browser:**
-   Go to [http://localhost:5000](http://localhost:5000)
-
 ---
 
 ## 🌐 Deployment
 
-- This app is ready for deployment on [Render.com](https://render.com/) or any Flask-compatible host.
+- This app is ready for deployment on [Render.com](https://render.com/)
 - Make sure your `requirements.txt` is up to date and your model files are included.
 
 ---
